@@ -56,6 +56,10 @@ jobs:
       run: |
         cd ${{ github.workspace }}/out && cpackget add -a *.pack 
 
+    - name: Patch the csolution to use the latest tensorflow packs
+      run:
+        sed -i 's/\(tensorflow::[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+
     - name: Build project ${{ matrix.target.proj }} for target ${{ matrix.target.board }} with AC6
       run: |
          cbuild mlek.csolution.yml --update-rte --packs --context ${{ matrix.target.proj }}+${{ matrix.target.board }}
