@@ -38,11 +38,11 @@ jobs:
       with:
         repository: Arm-Examples/mlek-cmsis-pack-examples
 
-    - name: Download Last Pack Build
-      uses: actions/download-artifact@v3
+    - name: Restor Latest Pack Build from Cache
+      uses: actions/cache@v3
       with:
-        name: tensorflow-pack-release
-        path: ${{ github.workspace }}/out
+         path: ${{ github.workspace }}/out
+         key: latest-tensorflow-pack-build
 
     - name: Unpack and Install Packs
       run: |
