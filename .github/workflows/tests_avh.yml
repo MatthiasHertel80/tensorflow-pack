@@ -35,7 +35,8 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
-      repository: Arm-Examples/mlek-cmsis-pack-examples
+      with:
+        repository: Arm-Examples/mlek-cmsis-pack-examples
 
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
