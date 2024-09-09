@@ -53,12 +53,14 @@ jobs:
       uses: ARM-software/cmsis-actions/armlm@v1
 
     - name: Unpack and Install Packs
-      run: |
+      run: 
         cd ${{ github.workspace }}/out && cpackget add -a *.pack 
 
-    - name: Patch the csolution to use the latest tensorflow packs
-      run:
+    - name: Patch the csolution to use the latest CMSIS and tensorflow packs
+      run: |
         sed -i 's/\(tensorflow::[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+        sed -i 's/\(ARM::CMSIS[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+
 
     - name: Build project ${{ matrix.target.proj }} for target ${{ matrix.target.board }} with AC6
       run: |
