@@ -54,7 +54,7 @@ jobs:
 
     - name: Unpack and Install Packs
       run: |
-        ls  ${{ github.workspace }}/out -la 
+        cd ${{ github.workspace }}/out && cpackget add -a *.pack 
 
     - name: Build project ${{ matrix.target.proj }} for target ${{ matrix.target.board }} with AC6
       run: |
