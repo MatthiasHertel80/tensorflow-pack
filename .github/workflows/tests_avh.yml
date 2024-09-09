@@ -39,10 +39,10 @@ jobs:
         repository: Arm-Examples/mlek-cmsis-pack-examples
 
     - name: Download Last Pack Build
-        uses: actions/download-artifact@v3
-        with:
-          name: tensorflow-pack-release
-          path: ${{ github.workspace }}/out
+      uses: actions/download-artifact@v3
+      with:
+        name: tensorflow-pack-release
+        path: ${{ github.workspace }}/out
 
     - name: Unpack and Install Packs
         run: |
