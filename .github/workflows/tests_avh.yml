@@ -38,16 +38,12 @@ jobs:
       with:
         repository: Arm-Examples/mlek-cmsis-pack-examples
 
-    - name: Restor Latest Pack Build from Cache
+    - name: Restore Latest Pack Build from Cache
       uses: actions/cache@v3
       with:
          path: ${{ github.workspace }}/out
          key: latest-tensorflow-pack-build
-
-    - name: Unpack and Install Packs
-      run: |
-        ls  ${{ github.workspace }}/out -la 
-
+         
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
       with: 
@@ -55,6 +51,10 @@ jobs:
 
     - name: Activate Arm tool license
       uses: ARM-software/cmsis-actions/armlm@v1
+
+    - name: Unpack and Install Packs
+      run: |
+        ls  ${{ github.workspace }}/out -la 
 
     - name: Build project ${{ matrix.target.proj }} for target ${{ matrix.target.board }} with AC6
       run: |
