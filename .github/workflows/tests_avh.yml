@@ -45,8 +45,8 @@ jobs:
         path: ${{ github.workspace }}/out
 
     - name: Unpack and Install Packs
-        run: |
-          ls  ${{ github.workspace }}/out -la 
+      run: |
+        ls  ${{ github.workspace }}/out -la 
 
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
