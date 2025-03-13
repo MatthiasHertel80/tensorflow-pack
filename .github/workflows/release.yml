@@ -56,9 +56,10 @@ jobs:
       #  run :  
       #    cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/build/*.pack ${{ github.workspace }}/out/
 
-      - name: Show content of ${{ github.workspace }}/tensorflow-pack/out/* folder after bulding the tensorflow-pack
-        run: |
-          tree  ${{ github.workspace }}/tensorflow-pack/out/
+      #  -- Skip as workaround. Breaks output of GHA log.
+      #- name: Show content of ${{ github.workspace }}/tensorflow-pack/out/* folder after bulding the tensorflow-pack
+      #  run: |
+      #    tree  ${{ github.workspace }}/tensorflow-pack/out/
 
       - name: Run the 3rdparty pack build with the revision specified
         run : |
