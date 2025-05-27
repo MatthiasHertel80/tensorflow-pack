@@ -8,7 +8,7 @@ This reference application demonstrates how to use TensorFlow Lite for Microcont
 - CMSIS Extensions for VSCode:
   - [CMSIS csolution](https://marketplace.visualstudio.com/items?itemName=ARM.cmsis-csolution)
   - [CMSIS Build](https://marketplace.visualstudio.com/items?itemName=ARM.cmsis-build)
-- Python 3.11.5 with Jupyter support and VSCode extension.
+- Python 3.11.x with Jupyter support and VSCode extension.
 - Compatible development board providing STDIO interface
 
 ## Project Setup
@@ -32,7 +32,7 @@ To configure these requirements you typically find Stack and Heap settings in ei
 
 1. Navigate to `Training/train_TFL_Micro_hello_world_model.ipynb`
 2. Open the Jupyter Notebook
-3. Select your Python 3.11.5 kernel
+3. Select your Python 3.11.x kernel
 4. Run all cells to:
    - Train the neural network
    - Generate the model
